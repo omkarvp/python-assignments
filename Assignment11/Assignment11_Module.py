@@ -10,12 +10,10 @@ def isPrimeNumberModule(Number):
     if Number % 2 == 0:
         return False
     
-    SquareRoot = int(pow(Number, 0.5))
-    
-    for i in range(3,SquareRoot,2):
-        if(Number % i == 0):
+    # Check divisibility from 2 to n-1
+    for i in range(2, Number):
+        if Number % i == 0:
             return False
-
      
     return True
 
