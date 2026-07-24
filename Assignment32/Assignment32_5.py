@@ -12,13 +12,12 @@ import sys
 import schedule
 import time
 import datetime
-import hashlib
 
 parent_directory = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
 sys.path.insert(0,parent_directory)
 
 from Assignments_Module import DisplayModule
-
+Border = "-"*65
 def DeleteEmptyFiles(SourceFolderPath):
     LogFileName = 'DeletedLogFile.txt'
     for FolderName,SubFolderName,FileName in os.walk(SourceFolderPath):
@@ -30,12 +29,15 @@ def DeleteEmptyFiles(SourceFolderPath):
 
                 try:
                     os.remove(os.path.join(SourceFolderPath,fName))
-                    fObj.write(f"Deleted File Path : {os.path.join(SourceFolderPath,fName)}")
+                    fObj.write(f"{Border}\n")
+                    fObj.write(f"Deleted File Path : {os.path.join(SourceFolderPath,fName)}\n")
+                    fObj.write(f"Date and Time: {datetime.datetime.now()}\n")
+                    fObj.write(f"{Border}\n")
 
                 except Exception as eObj:
                     fObj.write(f"Can not Deleted File Path : {os.path.join(SourceFolderPath,fName)} : {eObj}")
                     continue
-                
+
                 fObj.close()
 
 def main():
@@ -48,7 +50,12 @@ def main():
             SourceFolderPath = os.path.abspath(SourceFolderName)
 
         if(os.path.isdir(SourceFolderPath)):
-            DeleteEmptyFiles(SourceFolderPath)
+            schedule.every(10).seconds.do(DeleteEmptyFiles,SourceFolderPath)
+
+            while True:
+                schedule.run_pending()
+                time.sleep(1)
+
         else:
             print(f"Not a directory : {SourceFolderPath}")
     else:
