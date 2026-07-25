@@ -1,0 +1,38 @@
+-----------------------------------------------------------------
+Marvellous Automation Script
+-----------------------------------------------------------------
+
+Starting time of directory scanning  : 2026-07-26 02:57:37.124018 
+
+Completion time of directory scanning  : 0.00169
+
+Name of the directory scanned : 
+D:\python-assignments\Assignment33\Duplicate
+D:\python-assignments\Assignment33\Duplicate\Delhi
+D:\python-assignments\Assignment33\Duplicate\Gujarat
+D:\python-assignments\Assignment33\Duplicate\Maharashtra
+
+Total number of files scanned : 5 
+
+Total number of duplicate files found  : 4 
+
+Total number of duplicate files deleted   : 2 
+
+Complete paths of all deleted duplicate files  : 
+D:\python-assignments\Assignment33\Duplicate\Maharashtra\ABC.txt
+D:\python-assignments\Assignment33\Duplicate\Maharashtra\Test.txt
+
+Checksum values of duplicate files  : 
+e10369165744ff27263337e5b8688cc9
+a2b93f9455364cc4b685417ac6ec595b
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+
+Email Status  : 
+Status   : Sent
+Time     : 26/07/2026, 02:57:41
+Receiver : marvellousinfosystem@gmail.com
+
+
+-----------------------------------------------------------------
